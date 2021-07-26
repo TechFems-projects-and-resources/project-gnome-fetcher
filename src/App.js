@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { loadGnomes } from "./data";
+import { Filter } from "./Filter";
+import { Loader } from "./Loader";
+import { Population } from "./Population";
+import "./styles.css";
 
-function App() {
+export default function App() {
+  const [completeList, setCompleteList] = useState([]);
+  const [list, setList] = useState([]);
+  const [showLoader, setshowLoader] = useState(true);
+
+  useEffect(() => {
+    loadGnomes().then(({ Brastlewark: gnomes }) => {
+      setCompleteList(gnomes);
+      setList(gnomes);
+      setshowLoader(false);
+    });
+  }, []);
+
+  const onFilter = (value) => {
+    console.log(value);
+    setList(completeList.slice(0, value));
+  };
+
+  const onSearch = (value) => {
+    console.log(value);
+    setList(completeList.filter((gnome) => gnome.name.includes(value)));
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {showLoader ? (
+        <Loader />
+      ) : (
+        <>
+          <Filter onFilter={onFilter} onSearch={onSearch} />
+          <Population peopleList={list} />
+        </>
+      )}
     </div>
   );
 }
-
-export default App;
