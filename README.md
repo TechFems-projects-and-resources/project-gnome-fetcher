@@ -7,4 +7,6 @@ The Gnome Fetcher project has three levels of difficulty:
 * more advanced (challenge: build a React app, get necessary data from the API and show this in gnome cards on the screen)
 * graduates (challenge: add filter and search functionality, error handling, responsiveness)
 
+This repo provides the code for the React app, including filter. Styling is basic.
+
 Suggestions are always welcome (henriette@migracode.org). 
