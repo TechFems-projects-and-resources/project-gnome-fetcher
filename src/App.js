@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { loadGnomes } from "./data";
-import { Filter } from "./Filter";
-import { Loader } from "./Loader";
+import { Filter } from "./components/Filter";
+import { Loader } from "./components/Loader";
 import { Population } from "./Population";
 import "./styles.css";
 
