@@ -1,3 +1,3 @@
 export const Loader = () => {
-  return <span> Cargando Gnomos ...</span>;
+  return <span> Loading Gnomes ...</span>;
 };

@@ -17,7 +17,7 @@ export const Person = (props) => {
             setVisible(!isVisible);
           }}
         >
-          {isVisible ? "Ocultar detalle" : "Ver detalle"}
+          {isVisible ? "Hide details" : "Show details"}
         </button>
       </div>
       {isVisible ? (
