@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { loadGnomes } from "./data";
 import { Filter } from "./components/Filter";
 import { Loader } from "./components/Loader";
-import { Population } from "./Population";
+import { Population } from "./components/Population";
 import "./styles.css";
 
 export default function App() {

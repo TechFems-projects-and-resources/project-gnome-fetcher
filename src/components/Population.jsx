@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Person } from "./Person";
 
 export const Population = (props) => {
