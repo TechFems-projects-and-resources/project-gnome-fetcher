@@ -1,6 +1,6 @@
 export const Filter = ({ onFilter, onSearch }) => {
   return (
-    <div class="filter">
+    <div className="filter">
       <input type="text" onKeyDown={(event) => onSearch(event.target.value)} />
       <select onChange={(event) => onFilter(event.target.value)}>
         <option>No filter</option>

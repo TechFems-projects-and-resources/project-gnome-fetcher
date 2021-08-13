@@ -13,7 +13,6 @@ export const Person = (props) => {
       <div>
         <button
           onClick={() => {
-            console.log(rest);
             setVisible(!isVisible);
           }}
         >
@@ -22,8 +21,8 @@ export const Person = (props) => {
       </div>
       {isVisible ? (
         <div>
-          {Object.keys(rest).map((key) => (
-            <div>{`${key}: ${rest[key]}`}</div>
+          {Object.keys(rest).map((key, index) => (
+            <div key={index}>{`${key}: ${rest[key]}`}</div>
           ))}
         </div>
       ) : null}
